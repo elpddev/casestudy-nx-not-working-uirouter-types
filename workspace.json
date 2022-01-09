@@ -1,0 +1,39 @@
+{
+  "projects": {
+    "lib-a": {
+      "projectType": "library",
+      "root": "packages/lib-a",
+      "sourceRoot": "packages/lib-a/src",
+      "tags": [],
+      "targets": {
+        "build": {
+          "executor": "@nrwl/web:rollup",
+          "options": {
+            "entryFile": "packages/lib-a/src/index.ts",
+            "main": "packages/lib-a/src/index.ts",
+            "outputPath": "packages/lib-a/dist",
+            "project": "packages/lib-a/package.json",
+            "tsConfig": "packages/lib-a/tsconfig.lib.json"
+          },
+          "outputs": ["{options.outputPath}"]
+        },
+        "lint": {
+          "executor": "@nrwl/linter:eslint",
+          "options": {
+            "lintFilePatterns": ["packages/lib-a/**/*.ts"]
+          },
+          "outputs": ["{options.outputFile}"]
+        },
+        "test": {
+          "executor": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "packages/lib-a/jest.config.js",
+            "passWithNoTests": true
+          },
+          "outputs": ["coverage/packages/lib-a"]
+        }
+      }
+    }
+  }
+}
+
