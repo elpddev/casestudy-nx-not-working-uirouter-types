@@ -3,6 +3,9 @@
   "workspaces": [
     "packages/*"
   ],
+  "scripts": {
+    "nx:g": "nx"
+  },
   "devDependencies": {
     "@nrwl/cli": "latest",
     "@nrwl/eslint-plugin-nx": "^13.4.3",
